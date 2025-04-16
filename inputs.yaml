@@ -15,7 +15,7 @@ binary_sensor:
       - delayed_on: 100ms
       - delayed_off: 100ms
     publish_initial_state: true
-  #   on_state:
+  ##   on_state:
   #     then:
   #       - lambda: !include
   #           file: script_rain_water_tank_sensors_action.yaml
