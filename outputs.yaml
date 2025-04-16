@@ -4,45 +4,105 @@
 # https://www.waveshare.com/wiki/Pico-Relay-B
 switch:
   - platform: gpio
-    pin: GPIO21
-    internal: true
     id: relay_1
-  - platform: gpio
-    pin: GPIO20
-    internal: true
-    id: relay_2
-  - platform: gpio
-    pin: GPIO19
-    internal: true
-    id: relay_3
-  - platform: gpio
-    pin: GPIO18
-    internal: true
-    id: relay_4
-  - platform: gpio
-    pin: GPIO17
-    internal: true
-    id: relay_5
-  - platform: gpio
-    pin: GPIO16
-    internal: true
-    id: relay_6
-  - platform: gpio
-    pin: GPIO15
-    internal: true
-    id: ${peripherals_power_off_relay_id}
-  - platform: gpio
-    pin: GPIO14
-    id: ${pump_relay_id}
-    internal: true
-  - platform: output
-    name: Buzzer
-    output: buzzer
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 0
+      number: 0
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
     internal: true
 
-output:
-  - platform: rp2040_pwm
-    pin: GPIO6
-    # This gives ~2KHz output, by a reason this frequency is not in Hz
-    frequency: 8000000
-    id: buzzer
+  - platform: gpio
+    id: relay_2
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 1
+      number: 1
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
+    internal: true
+
+  - platform: gpio
+    id: relay_3
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 2
+      number: 2
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
+    internal: true
+
+  - platform: gpio
+    id: relay_4
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 3
+      number: 3
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
+    internal: true
+
+  - platform: gpio
+    id: relay_5
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 4
+      number: 4
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
+    internal: true
+
+  - platform: gpio
+    id: relay_6
+    pin:
+      pcf8574: pcf8574_output_hub
+      # Use pin number 5
+      number: 5
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: true
+    internal: true
+
+  - platform: gpio
+    id: relay_7
+    pin:
+      xl9535: xl9535_hub
+      # Use pin number 6
+      number: 0
+      # One of INPUT or OUTPUT
+      mode:
+        output: true
+      inverted: false
+    internal: true
+
+  # - platform: gpio
+  #   pin: GPIO15
+  #   internal: true
+  #   id: ${peripherals_power_off_relay_id}
+  # - platform: gpio
+  #   pin: GPIO14
+  #   id: ${pump_relay_id}
+  #   internal: true
+  # - platform: output
+  #   name: Buzzer
+  #   output: buzzer
+  #   internal: true
+
+# output:
+#   - platform: rp2040_pwm
+#     pin: GPIO6
+#     # This gives ~2KHz output, by a reason this frequency is not in Hz
+#     frequency: 8000000
+#     id: buzzer

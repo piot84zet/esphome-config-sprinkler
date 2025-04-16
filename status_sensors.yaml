@@ -22,24 +22,24 @@ text_sensor:
       vars:
         sprinkler: flowerbed_sprinklers
     update_interval: 5s
-  - platform: template
-    entity_category: diagnostic
-    id: pump_state
-    name: "Pump state"
-    icon: "mdi:pump"
-    update_interval: 5s
-    lambda: |-
-      return { id(${pump_relay_id}).state ? "Active" : "Idle" };
-  - platform: template
-    entity_category: diagnostic
-    id: peripherals_power_state
-    name: "Peripherals power"
-    icon: "mdi:flash-triangle-outline"
-    update_interval: 5s
-    lambda: |-
-      return {
-        id(${peripherals_power_off_relay_id}).state ? "Off" : "On"
-      };
+  # - platform: template
+  #   entity_category: diagnostic
+  #   id: pump_state
+  #   name: "Pump state"
+  #   icon: "mdi:pump"
+  #   update_interval: 5s
+  #   lambda: |-
+  #     return { id(${pump_relay_id}).state ? "Active" : "Idle" };
+  # - platform: template
+  #   entity_category: diagnostic
+  #   id: peripherals_power_state
+  #   name: "Peripherals power"
+  #   icon: "mdi:flash-triangle-outline"
+  #   update_interval: 5s
+  #   lambda: |-
+  #     return {
+  #       id(${peripherals_power_off_relay_id}).state ? "Off" : "On"
+  #     };
   - platform: template
     id: lawn_sprinklers_next_schedule
     name: "Lawn sprinklers: next schedule"

@@ -205,14 +205,14 @@ dynamic_on_time:
     sun: lawn_sprinklers_sun
     disabled: lawn_sprinklers_disabled
     on_time:
-      - logger.log:
-          format: 'schedule: Waiting for water tank to be full'
-          tag: lawn_sprinklers
-          level: 'INFO'
-      - wait_until:
-          condition:
-            binary_sensor.is_off: ${water_tank_empty_id}
-          timeout: ${scheduled_start_wait_tank_full_duration}
+      # - logger.log:
+      #     format: 'schedule: Waiting for water tank to be full'
+      #     tag: lawn_sprinklers
+      #     level: 'INFO'
+      # - wait_until:
+      #     condition:
+      #       binary_sensor.is_off: ${water_tank_empty_id}
+      #     timeout: ${scheduled_start_wait_tank_full_duration}
       - logger.log:
           format: 'schedule: Starting full sprinkler cycle'
           tag: lawn_sprinklers
@@ -231,14 +231,14 @@ dynamic_on_time:
     sun: flowerbed_sprinklers_sun
     disabled: flowerbed_sprinklers_disabled
     on_time:
-      - logger.log:
-          format: 'schedule: Waiting for water tank to be full'
-          tag: flowerbed
-          level: 'INFO'
-      - wait_until:
-          condition:
-            binary_sensor.is_off: ${water_tank_empty_id}
-          timeout: ${scheduled_start_wait_tank_full_duration}
+      # - logger.log:
+      #     format: 'schedule: Waiting for water tank to be full'
+      #     tag: flowerbed
+      #     level: 'INFO'
+      # - wait_until:
+      #     condition:
+      #       binary_sensor.is_off: ${water_tank_empty_id}
+      #     timeout: ${scheduled_start_wait_tank_full_duration}
       - logger.log:
           format: 'schedule: Starting full sprinkler cycle'
           tag: flowerbed

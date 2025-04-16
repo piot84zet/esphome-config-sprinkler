@@ -27,15 +27,15 @@ substitutions:
   temperature_sensor_id: temperature
 
 packages:
-  outputs: !include outputs.yaml
-  inputs: !include inputs.yaml
-  schedule: !include schedule.yaml  # Optional
-  display: !include display.yaml  # Optional
-  indicators: !include indicators.yaml  # Optional
+  outputs: !include outputs.yaml #ok
+  inputs: !include inputs.yaml #ok
+  schedule: !include schedule.yaml  # Optional ok
+  #display: !include display.yaml  # Optional ok
+  #indicators: !include indicators.yaml  # Optional ok
   controllers: !include controllers.yaml
-  status_sensors: !include status_sensors.yaml
-  time: !include time.yaml  # Optional
-  rtc: !include rtc.yaml  # Optional
+  status_sensors: !include status_sensors.yaml #ok
+  time: !include time.yaml  # Optional ok
+  rtc: !include rtc.yaml  # Optional ok
 
 # 2024.11.0 addresses security vulnerability
 esphome:

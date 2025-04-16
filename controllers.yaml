@@ -26,14 +26,14 @@ sprinkler:
             call.perform();
             #endif
       on_turn_off:
-        - !include
-          file: script_refill_tank.yaml
-          vars:
-            sprinkler: lawn_sprinklers
-            relay: ${peripherals_power_off_relay_id}
-            condition: >-
-              !id(disable_water_tank_refill).state
-              && !id(water_tank_refill_after_each_valve).state
+        # - !include
+        #   file: script_refill_tank.yaml
+        #   vars:
+        #     sprinkler: lawn_sprinklers
+        #     relay: ${peripherals_power_off_relay_id}
+        #     condition: >-
+        #       !id(disable_water_tank_refill).state
+        #       && !id(water_tank_refill_after_each_valve).state
         - lambda: |-
             #ifdef HAS_RGB_LED
             auto call = ${led_id}->turn_off();
@@ -49,20 +49,20 @@ sprinkler:
       id: lawn_sprinklers_standby_switch
       internal: true
     valve_overlap: ${valve_overlap}
-    pump_start_pump_delay: ${pump_start_pump_delay}
-    pump_stop_valve_delay: ${pump_stop_valve_delay}
+    # pump_start_pump_delay: ${pump_start_pump_delay}
+    # pump_stop_valve_delay: ${pump_stop_valve_delay}
     valves:
       - valve_switch:
           name: "South lawn"
           icon: "mdi:sprinkler"
-          on_turn_off: !include
-            file: script_refill_tank.yaml
-            vars:
-              sprinkler: lawn_sprinklers
-              relay: ${peripherals_power_off_relay_id}
-              condition: >-
-                !id(disable_water_tank_refill).state
-                && id(water_tank_refill_after_each_valve).state
+          # on_turn_off: !include
+          #   file: script_refill_tank.yaml
+          #   vars:
+          #     sprinkler: lawn_sprinklers
+          #     relay: ${peripherals_power_off_relay_id}
+          #     condition: >-
+          #       !id(disable_water_tank_refill).state
+          #       && id(water_tank_refill_after_each_valve).state
         enable_switch: "Enable south lawn"
         run_duration_number:
           name: "South lawn run duration"
@@ -71,18 +71,18 @@ sprinkler:
           restore_value: true
           unit_of_measurement: ${run_duration_uom}
         valve_switch_id: relay_1
-        pump_switch_id: ${pump_relay_id}
+        # pump_switch_id: ${pump_relay_id}
       - valve_switch:
           name: "North lawn"
           icon: "mdi:sprinkler"
-          on_turn_off: !include
-            file: script_refill_tank.yaml
-            vars:
-              sprinkler: lawn_sprinklers
-              relay: ${peripherals_power_off_relay_id}
-              condition: >-
-                !id(disable_water_tank_refill).state
-                && id(water_tank_refill_after_each_valve).state
+          # on_turn_off: !include
+          #   file: script_refill_tank.yaml
+          #   vars:
+          #     sprinkler: lawn_sprinklers
+          #     relay: ${peripherals_power_off_relay_id}
+          #     condition: >-
+          #       !id(disable_water_tank_refill).state
+          #       && id(water_tank_refill_after_each_valve).state
         enable_switch: "Enable north lawn"
         run_duration_number:
           name: "North lawn run duration"
@@ -91,18 +91,18 @@ sprinkler:
           restore_value: true
           unit_of_measurement: ${run_duration_uom}
         valve_switch_id: relay_2
-        pump_switch_id: ${pump_relay_id}
+        # pump_switch_id: ${pump_relay_id}
       - valve_switch:
           name: "West lawn"
           icon: "mdi:sprinkler"
-          on_turn_off: !include
-            file: script_refill_tank.yaml
-            vars:
-              sprinkler: lawn_sprinklers
-              relay: ${peripherals_power_off_relay_id}
-              condition: >-
-                !id(disable_water_tank_refill).state
-                && id(water_tank_refill_after_each_valve).state
+          # on_turn_off: !include
+          #   file: script_refill_tank.yaml
+          #   vars:
+          #     sprinkler: lawn_sprinklers
+          #     relay: ${peripherals_power_off_relay_id}
+          #     condition: >-
+          #       !id(disable_water_tank_refill).state
+          #       && id(water_tank_refill_after_each_valve).state
         enable_switch: "Enable west lawn"
         run_duration_number:
           name: "West lawn run duration"
@@ -111,7 +111,7 @@ sprinkler:
           restore_value: true
           unit_of_measurement: ${run_duration_uom}
         valve_switch_id: relay_3
-        pump_switch_id: ${pump_relay_id}
+        # pump_switch_id: ${pump_relay_id}
 
   - id: flowerbed_sprinklers
     main_switch:
@@ -132,14 +132,14 @@ sprinkler:
             call.perform();
             #endif
       on_turn_off:
-        - !include
-          file: script_refill_tank.yaml
-          vars:
-            sprinkler: flowerbed_sprinklers
-            relay: ${peripherals_power_off_relay_id}
-            condition: >-
-              !id(disable_water_tank_refill).state
-              && !id(water_tank_refill_after_each_valve).state
+        # - !include
+        #   file: script_refill_tank.yaml
+        #   vars:
+        #     sprinkler: flowerbed_sprinklers
+        #     relay: ${peripherals_power_off_relay_id}
+        #     condition: >-
+        #       !id(disable_water_tank_refill).state
+        #       && !id(water_tank_refill_after_each_valve).state
         - lambda: |-
             #ifdef HAS_RGB_LED
             auto call = ${led_id}->turn_off();
@@ -155,20 +155,20 @@ sprinkler:
       id: flowerbed_sprinklers_standby_switch
       internal: true
     valve_overlap: ${valve_overlap}
-    pump_start_pump_delay: ${pump_start_pump_delay}
-    pump_stop_valve_delay: ${pump_stop_valve_delay}
+    # pump_start_pump_delay: ${pump_start_pump_delay}
+    # pump_stop_valve_delay: ${pump_stop_valve_delay}
     valves:
       - valve_switch:
           name: "South flowerbed"
           icon: "mdi:sprinkler"
-          on_turn_off: !include
-            file: script_refill_tank.yaml
-            vars:
-              sprinkler: flowerbed_sprinklers
-              relay: ${peripherals_power_off_relay_id}
-              condition: >-
-                !id(disable_water_tank_refill).state
-                && id(water_tank_refill_after_each_valve).state
+          # on_turn_off: !include
+          #   file: script_refill_tank.yaml
+          #   vars:
+          #     sprinkler: flowerbed_sprinklers
+          #     relay: ${peripherals_power_off_relay_id}
+          #     condition: >-
+          #       !id(disable_water_tank_refill).state
+          #       && id(water_tank_refill_after_each_valve).state
         enable_switch: "Enable south flowerbed"
         run_duration_number:
           name: "South flowerbed run duration"
@@ -177,18 +177,18 @@ sprinkler:
           restore_value: true
           unit_of_measurement: ${run_duration_uom}
         valve_switch_id: relay_4
-        pump_switch_id: ${pump_relay_id}
+        # pump_switch_id: ${pump_relay_id}
       - valve_switch:
           name: "West flowerbed"
           icon: "mdi:sprinkler"
-          on_turn_off: !include
-            file: script_refill_tank.yaml
-            vars:
-              sprinkler: flowerbed_sprinklers
-              relay: ${peripherals_power_off_relay_id}
-              condition: >-
-                !id(disable_water_tank_refill).state
-                && id(water_tank_refill_after_each_valve).state
+          # on_turn_off: !include
+          #   file: script_refill_tank.yaml
+          #   vars:
+          #     sprinkler: flowerbed_sprinklers
+          #     relay: ${peripherals_power_off_relay_id}
+          #     condition: >-
+          #       !id(disable_water_tank_refill).state
+          #       && id(water_tank_refill_after_each_valve).state
         enable_switch: "Enable west flowerbed"
         run_duration_number:
           name: "West flowerbed"
@@ -197,21 +197,21 @@ sprinkler:
           restore_value: true
           unit_of_measurement: ${run_duration_uom}
         valve_switch_id: relay_5
-        pump_switch_id: ${pump_relay_id}
+        # pump_switch_id: ${pump_relay_id}
 
 switch:
-  - platform: template
-    id: disable_water_tank_refill
-    name: "Disable water tank refill"
-    optimistic: true
-    restore_mode: RESTORE_DEFAULT_OFF
-    entity_category: config
-  - platform: template
-    id: water_tank_refill_after_each_valve
-    name: "Water tank refill after each valve"
-    optimistic: true
-    restore_mode: RESTORE_DEFAULT_OFF
-    entity_category: config
+  # - platform: template
+  #   id: disable_water_tank_refill
+  #   name: "Disable water tank refill"
+  #   optimistic: true
+  #   restore_mode: RESTORE_DEFAULT_OFF
+  #   entity_category: config
+  # - platform: template
+  #   id: water_tank_refill_after_each_valve
+  #   name: "Water tank refill after each valve"
+  #   optimistic: true
+  #   restore_mode: RESTORE_DEFAULT_OFF
+  #   entity_category: config
   - platform: template
     id: winter_mode
     name: "Winter mode"
@@ -233,7 +233,7 @@ switch:
           flowerbed_sprinklers_disabled->turn_on();
           #endif
           // Turn off peripherals power (water level relay and alike)
-          id(${peripherals_power_off_relay_id}).turn_on();
+          //id(${peripherals_power_off_relay_id}).turn_on();
     turn_off_action:
       - lambda: |-
           // Move controllers out of standby mode
@@ -245,7 +245,7 @@ switch:
           flowerbed_sprinklers_disabled->turn_off();
           #endif
           // Enable peripherals power
-          id(${peripherals_power_off_relay_id}).turn_off();
+          //id(${peripherals_power_off_relay_id}).turn_off();
           // Update the state of the winter mode switch, so that any code checks
           // for its state actually sees it disabled (during the trigger the
           // `state` variable will still be `on` until trigger's code
@@ -254,10 +254,10 @@ switch:
 
       # Re-publish the state of rain and water tank empty sensors, so that
       # controllers reflect their actual state
-      - lambda: !include
-          file: script_rain_water_tank_sensors_action.yaml
-          vars:
-            triggered_by: winter_mode
+      # - lambda: !include
+      #     file: script_rain_water_tank_sensors_action.yaml
+      #     vars:
+      #       triggered_by: winter_mode
 
 button:
   - platform: template
