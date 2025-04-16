@@ -8,7 +8,7 @@ binary_sensor:
       pcf8574: pcf8574_input_hub
       number: 0
       mode:
-        pullup: false #true
+        pullup: false
         input: true
       inverted: ${rain_sensor_inverted}
     name: "Rain sensor"
